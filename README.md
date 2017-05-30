@@ -70,7 +70,7 @@ All scripts are located in the root directory.
 
 PART 1
 --------------
-In the first part of this tutorial we will train a classifier which uses, but does not modify, a pre-trained deep neural network.
+In the first part of this tutorial we will train a classifier which uses, but does not modify, a pre-trained deep neural network. The pre-trained DNN will be used as a featurizer, and a linear SVM trained which, given an image, predicts its attribute (ie. if it is dotted, striped, or leopard).
 
 ### Image data
 `Script: 0_downloadImages.py`
@@ -153,4 +153,37 @@ Script `5_trainSVM.py` loads the training images, trains the SVM for different v
 
 <p align="center">
 <img src="doc/output_script_5.png" alt="alt text" width="600"/>
+</p>
+
+
+### STEP 6: Evaluation and visualization
+`Scripts: 6_evaluate.py`
+
+The accuracy of the trained image classifier can be measured using the script `6_evaluate.py`. This scores all test images from step 1 using the trained SVM, assigns each image the attribute with the highest SVM score, and compares the predicted attributes with the ground truth annotations.
+
+The output of script `6_evaluate.py` is shown below. The classification accuracy of each individual class is computed, as well as the accuracy for the full test set ('overall accuracy'), and the average over the individual accuracies ('overall class-averaged accuracy'). 100% corresponds to the best possible accuracy, 0% to the worst, and random guessing would on average produce a class-averaged accuracy of 1 over the number of attributes, ie. in our case this would be 33.33%. These results improve significantly when using a higher input resolution `rf_inputResoluton = 1000` and a higher dropout rate `rf_dropoutRate = 0.9`, however DNN refinement becomes much slower.
+
+<p align="center">
+<img src="doc/output_script_6.png" alt="alt text" width="300"/>
+</p>
+
+In addition to accuracy, also the precision recall curve is plotted with respective area-under-curve (left); and the confusion matrix is shown (right):
+
+<p align="center">
+<img src="doc/pr_curve_conf_matrix.png" alt="alt text" width="700"/>
+</p>
+
+Finally, qualitative visualizations are produced for each image in the test set (see figure below).  The highest score and respective class is shown (here: 'dotted' with score 1.67), in green if the class of the image was correctly predicted, and red otherwise.
+
+<p align="center">
+<img src="doc/visualization_script_6.png" alt="alt text" width="300"/>
+</p>
+
+
+### STEP 7: Active learning
+
+-	Active learning: UI to manually annotated more images. Images presented to the user are selected from possibly a very large dataset according to user-specfied criteria, e.g. images where the classifier is uncertain or images which are likely false positives.
+
+<p align="center">
+<img src="doc/active_learning_ui.png" alt="alt text" width="800"/>
 </p>
