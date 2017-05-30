@@ -2,9 +2,6 @@
 import sys, os
 from helpers import getDirectoriesInDirectory, pathJoin
 
-#TODO:
-# REMOVE unnecessary code
-# MOVE HELPERS AND PARAMS TO ACTUALY FUNCTIONS
 
 #######################################
 #######################################
@@ -29,7 +26,7 @@ rf_pretrainedModelFilename = "ResNet_18.model"  # Pre-trained ImageNet model
 rf_inputResoluton = 224                 # DNN image input width and height in pixels. ALso try e.g. 4*224=896 pixels.
 rf_dropoutRate    = 0.5                 # Droputout rate
 rf_mbSize         = 16                  # Minibatch size (reduce if running out of memory)
-rf_maxEpochs      = 5 #45          # Number of training epochs. Set to 0 to skip DNN refinement
+rf_maxEpochs      = 45                  # Number of training epochs. Set to 0 to skip DNN refinement
 rf_maxTrainImages = float('inf')        # Naximum number of training images per epoch. Set to float('inf') to use all images
 rf_lrPerMb        = [0.01] * 20 + [0.001] * 20 + [0.0001]  # Learning rate schedule
 rf_momentumPerMb  = 0.9                 # Momentum during gradient descent
