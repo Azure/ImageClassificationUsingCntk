@@ -14,7 +14,8 @@ mapPath = pathJoin(workingDir, "active_learning_map.txt")
 # Get list of images
 imgDict = {}
 imgDict["unlabeled"] = getFilesInDirectory(imgUnlabeledDir, ".jpg")
-assert len(imgDict["unlabeled"])>0, "Need to provide at least 1 image for active learning i in directory: " + imgUnlabeledDir
+if len(imgDict["unlabeled"]) == 0 :
+    raise Exception("Need to provide at least 1 image for active learning in directory: " + imgUnlabeledDir)
 
 # Run DNN / SVM classifiers
 print("Running DNN...")
