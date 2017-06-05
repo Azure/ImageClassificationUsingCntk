@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 *-
 from helpers import *
-
-from cntk import *
-from cntk import load_model, Trainer, UnitType
+from cntk import load_model, Trainer, UnitType, use_default_device, placeholder, constant, cross_entropy_with_softmax, classification_error
 from cntk.io import MinibatchSource, ImageDeserializer, StreamDefs, StreamDef
 from cntk.layers import placeholder, GlobalAveragePooling, Dropout, Dense
 from cntk.learners import momentum_sgd, learning_rate_schedule, momentum_schedule
