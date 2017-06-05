@@ -25,9 +25,11 @@ feats_test,  labels_test,  _ = getSvmInput(imgDictTest,  dnnOutput, svm_boL2Norm
 feats_train, labels_train, _ = getSvmInput(imgDictTrain, dnnOutput, svm_boL2Normalize, lutLabel2Id)
 feats_aug,   labels_aug,   _ = getSvmInput(imgDictAug,   dnnOutput, svm_boL2Normalize, lutLabel2Id)
 feats_al,    labels_al,    _ = getSvmInput(imgDictAl,    dnnOutput, svm_boL2Normalize, lutLabel2Id)
+print("Adding {} augmented images to the training set.".format(len(labels_aug)))
 feats_train  += feats_aug
-feats_train  += feats_al
 labels_train += labels_aug
+print("Adding {} active learninig images to the training set.".format(len(labels_al)))
+feats_train  += feats_al
 labels_train += labels_al
 printFeatLabelInfo("Statistics training data:", feats_train, labels_train)
 printFeatLabelInfo("Statistics test data:",     feats_test,  labels_test)

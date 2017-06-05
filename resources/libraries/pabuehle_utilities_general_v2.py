@@ -677,13 +677,13 @@ def cmPlot(confMatrix, classes, normalize=False, title='Confusion matrix', cmap=
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
 
-def prComputeCurves(gtLabels, scoresMatrix):
+def prComputeCurves(gtLabels, scoresMatrix, posLabel = None):
     predScores   = [np.max(scores) for scores in scoresMatrix]
     predLabels   = np.array([np.argmax(scores) for scores in scoresMatrix])
     predsCorrect = np.array(np.array(predLabels) == np.array(gtLabels), int)
     #sampleWeights = getSampleWeights(gtLabels) # balanca pos and neg examples, currently only works for binary
     auc = average_precision_score(predsCorrect, predScores, average="macro") #, sample_weight = sampleWeights)
-    precisionVec, recallVec, _ = precision_recall_curve(predsCorrect, predScores) #, sample_weight = sampleWeights)
+    precisionVec, recallVec, _ = precision_recall_curve(predsCorrect, predScores, posLabel) #, sample_weight = sampleWeights)
     return (precisionVec, recallVec, auc)
 
 def prPlotCurves(precisionVec, recallVec, auc):

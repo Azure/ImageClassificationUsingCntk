@@ -4,7 +4,7 @@ from helpers import *
 from cntk import *
 from cntk import load_model, Trainer, UnitType
 from cntk.io import MinibatchSource, ImageDeserializer, StreamDefs, StreamDef
-from cntk.layers import placeholder, constant, GlobalAveragePooling, Dropout, Dense
+from cntk.layers import placeholder, GlobalAveragePooling, Dropout, Dense
 from cntk.learners import momentum_sgd, learning_rate_schedule, momentum_schedule
 from cntk.logging import log_number_of_parameters, ProgressPrinter, graph
 from cntk.logging.graph import find_by_name

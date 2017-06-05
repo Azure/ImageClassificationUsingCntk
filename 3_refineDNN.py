@@ -31,7 +31,9 @@ dataTest  = getImgLabelList(imgDictTest,  imgOrigDir, lutLabel2Id)
 dataTrain = getImgLabelList(imgDictTrain, imgOrigDir, lutLabel2Id)
 dataAug   = getImgLabelList(imgDictAug,   imgAugDir,  lutLabel2Id)
 dataAl    = getImgLabelList(imgDictAl,    imgAlDir,   lutLabel2Id)
+print("Adding {} augmented images to the training set.".format(len(dataAug)))
 dataTrain += dataAug
+print("Adding {} active learninig images to the training set.".format(len(dataAl)))
 dataTrain += dataAl
 
 # Optionally add duplicates to balance dataset.

@@ -19,17 +19,17 @@ Functionality so far:
 PREREQUISITES
 --------------
 
-This code was tested using CNTK 2.0.rc1 (release candidate 1). It requires rc1 or higher and assumes that CNTK was installed with the (default) 
-Anaconda Python interpreter. Note that the code will not run on previous CNTK versions due to breaking changes introduced in 2.0.rc1.
+This code was tested using CNTK 2.0.0, and assumes that CNTK was installed with the (default)
+Anaconda Python interpreter using the [script-driven installation](https://github.com/Microsoft/CNTK/wiki/Setup-Windows-Binary-Script). Note that the code will not run on previous CNTK versions due to breaking changes.
 
-A dedicated GPU, while technically not being required, is however recommended for refining of the DNN. If you lack a strong GPU, don't want to 
-install CNTK yourself, or want to train on multiple GPUs, then consider using Azure's Data Science Virtual Machine. See the [Deep Learning 
+A dedicated GPU, while technically not being required, is however recommended for refining of the DNN. If you lack a strong GPU, don't want to
+install CNTK yourself, or want to train on multiple GPUs, then consider using Azure's Data Science Virtual Machine. See the [Deep Learning
 Toolkit](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-ads.dsvm-deep-learning) for a 1-click deployment solution.
 
-CNTK can be easily installed by following the instructions on the [setup page](https://github.com/Microsoft/CNTK/wiki/Setup-Windows-Binary-Script). 
+CNTK can be easily installed by following the instructions on the [setup page](https://github.com/Microsoft/CNTK/wiki/Setup-Windows-Binary-Script).
 This will also automatically add an Anaconda Python distribution. At the time of writing, the default python version is 3.5 64bit.
 
-Anaconda comes with many packages already pre-installed. The only missing packages are opencv, scikit-learn, and Pillow. These can be installed 
+Anaconda comes with many packages already pre-installed. The only missing packages are opencv, scikit-learn, and Pillow. These can be installed
 easily using *pip* by opening a command prompt and running:
 ````bash
 C:/local/CNTK-2-0-rc1/cntk/Scripts/cntkpy35.bat #activate CNTK's python environment
@@ -37,11 +37,11 @@ cd resources/python35_64bit_requirements/
 pip.exe install -r requirements.txt
 ````
 
-In the code snippet above, we assumed that the CNTK root directory is  *C:/local/CNTK-2-0-rc1/*. The opencv python wheel was originally downloaded 
+In the code snippet above, we assumed that the CNTK root directory is  *C:/local/CNTK-2-0-rc1/*. The opencv python wheel was originally downloaded
 from this [page](http://www.lfd.uci.edu/~gohlke/pythonlibs/).
 
 Troubleshooting:
-- The error "Batch normalization training on CPU is not yet implemented" can be caused when installing the CPU-only version of CNTK. In such cases, 
+- The error "Batch normalization training on CPU is not yet implemented" can be caused when installing the CPU-only version of CNTK. In such cases,
 try the GPU version, even if your system does not have a GPU installed.
 
 
