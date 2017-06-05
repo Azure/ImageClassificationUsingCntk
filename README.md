@@ -6,7 +6,7 @@ IMAGE CLASSIFICATION USING MICROSOFT COGNITIVE TOOLKIT (CNTK)
 
 WARNING:   
 This is work in progress...
-The code is tested and works with CNTK rc1, however the documentation is only partially written and might contain errors (since much of it is currently copy & pasted from my other tutorials).
+The code is tested and works with CNTK v2.0, however the documentation is only partially written and might contain errors (since much of it is currently copy & pasted from my other tutorials).
 
 ---
 
@@ -38,12 +38,12 @@ This will also automatically add an Anaconda Python distribution. At the time of
 Anaconda comes with many packages already pre-installed. The only missing packages are opencv, scikit-learn, and Pillow. These can be installed
 easily using *pip* by opening a command prompt and running:
 ````bash
-C:/local/CNTK-2-0-rc1/cntk/Scripts/cntkpy35.bat #activate CNTK's python environment
+C:/local/CNTK-2-0/cntk/Scripts/cntkpy35.bat #activate CNTK's python environment
 cd resources/python35_64bit_requirements/
 pip.exe install -r requirements.txt
 ````
 
-In the code snippet above, we assumed that the CNTK root directory is  *C:/local/CNTK-2-0-rc1/*. The opencv python wheel was originally downloaded
+In the code snippet above, we assumed that the CNTK root directory is  *C:/local/CNTK-2-0/*. The opencv python wheel was originally downloaded
 from this [page](http://www.lfd.uci.edu/~gohlke/pythonlibs/).
 
 Troubleshooting:
