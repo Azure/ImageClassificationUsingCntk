@@ -221,3 +221,17 @@ def runCntkModelAllImages(model, imgDict, imgDir, map_file, node_name = [], mb_s
         imgSubdir   = os.path.split(os.path.split(imgPath)[0])[1]
         dnnOutput[imgSubdir][imgFilename] = values
     return dnnOutput
+
+
+def runCntkModelImagePaths(model, imgPaths, map_file, node_name = [], mb_size = 1):
+    # Run DNN
+    imgLabelMap = zip(imgPaths, [0] * len(imgPaths)) # Set labels to all 0's since not used anyway
+    writeTable(map_file, imgLabelMap)
+    rawOutput = runCntkModel(model, map_file, node_name, mb_size)
+
+    #return DNN output in same order as the provided image paths
+    rawOutputDict = {}
+    for imgPath, values in rawOutput:
+        rawOutputDict[imgPath] = values
+    dnnOutput = [rawOutputDict[s] for s in imgPaths]
+    return dnnOutput

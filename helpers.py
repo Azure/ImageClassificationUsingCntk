@@ -84,6 +84,13 @@ def runClassifier(classifier, dnnOutput, imgDict = [],  lutLabel2Id = [], svmPat
         scoresMatrix = np.vstack(scoresMatrix)
     return scoresMatrix, imgFilenames, gtLabels
 
+def runClassifierOnImagePaths(classifier, dnnOutput, svmPath = [], svm_boL2Normalize = []):
+    dnnOutputDict = {"dummy":{} }
+    for i,feat in enumerate(dnnOutput):
+        dnnOutputDict["dummy"][str(i)] = feat
+    scoresMatrix, _, _ = runClassifier(classifier, dnnOutputDict, [], [], svmPath, svm_boL2Normalize)
+    return scoresMatrix
+
 
 ################################
 # Script-specific helper functions
