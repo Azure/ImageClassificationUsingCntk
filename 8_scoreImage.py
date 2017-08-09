@@ -14,7 +14,10 @@ resourcesDir = "C:/Users/pabuehle/Desktop/ImageClassificationUsingCntk/proc/fash
 # Do not change
 run_mbSize = 1
 svm_boL2Normalize = True
-cntkRefinedModelPath = pathJoin(resourcesDir, "cntk_refined.model")
+if classifier == "svm":
+   cntkRefinedModelPath = pathJoin(resourcesDir, "cntk_fixed.model")
+else:
+   cntkRefinedModelPath = pathJoin(resourcesDir, "cntk_refined.model")
 lutId2LabelPath      = pathJoin(resourcesDir, "lutId2Label.pickle")
 svmPath              = pathJoin(resourcesDir, classifier + ".np")  #only used if classifier is set to 'svm'
 workingDir           = pathJoin(resourcesDir, "tmp/")
