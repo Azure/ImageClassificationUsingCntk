@@ -26,6 +26,8 @@ workingDir           = pathJoin(resourcesDir, "tmp/")
 # Init
 print("Classifier = " + classifier)
 makeDirectory(workingDir)
+if not os.path.exists(cntkRefinedModelPath):
+    raise Exception("Model file {} does not exist, likely because the {} classifier has not been trained yet.".format(cntkRefinedModelPath, classifier))
 model = load_model(cntkRefinedModelPath)
 lutId2Label = readPickle(lutId2LabelPath)
 
