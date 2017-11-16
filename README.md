@@ -25,6 +25,6 @@ Detailed documentation:
 Code and example data:  
 [https://github.com/azure/MachineLearningSamples-ImageClassificationUsingCntk](https://github.com/azure/MachineLearningSamples-ImageClassificationUsingCntk)
 
-## Related tutorials
+## Other tutorials in this series
 - [Object Detection using CNTK](https://github.com/Azure/ObjectDetectionUsingCntk)
 - [Image Similarity using CNTK](https://github.com/Azure/ImageSimilarityUsingCntk)
