@@ -2,8 +2,7 @@
 IMAGE CLASSIFICATION USING MICROSOFT COGNITIVE TOOLKIT (CNTK)
 ==============
 
-DESCRIPTION
---------------
+## DESCRIPTION
 
 A large number of problems in the computer vision domain can be solved using image classification approaches.
 These include building models which answer questions such as, "Is an OBJECT present in the image?" (where OBJECT could for example be "dog", "car", "ship", etc.) as well as more complex questions, like "What class of eye disease severity is evinced by this patient's retinal scan?"
@@ -29,3 +28,7 @@ Detailed documentation can be found at:
 
 Code location:  
 [https://github.com/azure/MachineLearningSamples-ImageClassificationUsingCntk](https://github.com/azure/MachineLearningSamples-ImageClassificationUsingCntk)
+
+## Related tutorials
+- [Object Detection using CNTK](https://github.com/Azure/ObjectDetectionUsingCntk)
+- [Image Similarity using CNTK](https://github.com/Azure/ImageSimilarityUsingCntk)
