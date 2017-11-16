@@ -19,14 +19,10 @@ The key steps required to deliver this solution are as follows:
 
 
 
-## Link to the Microsoft DOCS site
+Detailed documentation:  
+ [https://docs.microsoft.com/azure/machine-learning/preview/scenario-image-classification-using-cntk](https://docs.microsoft.com/azure/machine-learning/preview/scenario-image-classification-using-cntk)
 
-Detailed documentation can be found at:  
-[https://docs.microsoft.com/azure/machine-learning/preview/scenario-image-classification-using-cntk](https://docs.microsoft.com/azure/machine-learning/preview/scenario-image-classification-using-cntk)
-
-## Link to the Gallery GitHub repository
-
-Code location:  
+Code and example data:  
 [https://github.com/azure/MachineLearningSamples-ImageClassificationUsingCntk](https://github.com/azure/MachineLearningSamples-ImageClassificationUsingCntk)
 
 ## Related tutorials
